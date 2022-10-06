@@ -27,8 +27,8 @@
             }
         </style>
     </head>
-    <body>
-        <video autoplay loop id="myVideo">
+    <body onload="document.getElementById('myVideo').play()">
+        <video loop id="myVideo">
             <source src="pep8song.mp4" type="video/mp4">
         </video>
         <div id="upper_panel" class="upper_panel">
