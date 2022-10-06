@@ -27,7 +27,7 @@
             }
         </style>
     </head>
-    <body onload="document.getElementById('myVideo').play()">
+    <body>
         <video loop id="myVideo">
             <source src="pep8song.mp4" type="video/mp4">
         </video>
@@ -42,7 +42,9 @@
             var main_interval;
             var target_distance = 10 * 60 * 1000 + 5000; // min * sec * ms 10 * 60 * 1000
             var element_to_detect_click = document.getElementById("demo");
-            
+            var video = document.getElementById('myVideo');
+            var is_video_off = true;
+
             function render_time(new_time_ms) {
                 var minutes = Math.floor((new_time_ms % 3600000) / 60000);
                 var seconds = Math.floor((new_time_ms % 60000) / 1000);
@@ -58,6 +60,12 @@
                 var printed_time = interval_start - 1000;
                 var trailing_zero_for_seconds = "";
                 clearInterval(main_interval);
+
+                if (is_video_off) {
+                    is_video_off = false;
+                    video.play();
+                }
+
                 main_interval = setInterval(function() {
                     var now = new Date().getTime();
                     var distance = interval_target - now;
