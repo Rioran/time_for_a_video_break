@@ -22,15 +22,23 @@
             p {
                 color: white;
             }
+            #myVideo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+                position: absolute;
+                z-index: 15;
+            }
         </style>
     </head>
     <body>
+        <video autoplay loop id="myVideo">
+            <source src="pep8song.mp4" type="video/mp4">
+        </video>
         <div id="upper_panel" class="upper_panel">
-            <div id="audio_div" class="audio_div">
-                <audio controls loop>
-                    <source src="music.m4a" type="audio/mpeg">
-                </audio>
-            </div>
+            <div id="audio_div" class="audio_div"></div>
             <div id="timer_div" class="timer_div">
                 <h1><p id="demo">CLICK!</p></h1>
             </div>
