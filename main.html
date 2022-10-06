@@ -77,6 +77,7 @@
                     if (distance < 0) {
                         clearInterval(main_interval);
                         element_to_detect_click.innerHTML = "GO!";
+                        video.pause();
                     }
                 }, 50);
                 return true;
